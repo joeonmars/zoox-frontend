@@ -1,0 +1,137 @@
+{namespace zoox.templates.screens.homescreen autoescape="false"}
+
+/**
+ * Home screen
+ */
+{template .HomeScreen}
+{call zoox.templates.screens.Screen}
+	{param screenId}home-screen{/param}
+	{param screenContent}
+
+		<div class="left arrow"></div>
+		<div class="titleContainer">
+			<h3>NINE INCH NAILS</h3>
+			<ul>
+				<li>DIRECTOR'S CUT</li>
+				<li>LIVE FROM HOLLYWOOD BOWL</li>
+			</ul>
+		</div>
+		<div class="right arrow"></div>
+
+		<ul class="imageView">
+			<li><img src=""></li>
+			<li><img src=""></li>
+		</ul>
+
+		<ul class="tabs">
+			<li class="live button"><div>LIVE</div></li>
+			<li class="director button"><div>DIRECTOR</div></li>
+			<li class="singer button"><div>SINGER</div></li>
+			<li class="crowd button"><div>CROWD</div></li>
+		</ul>
+
+		<div class="tabContent">
+			<div class="infoSlider">
+				<div class="aeuLogo"></div>
+				<div class="didYouKnowContainer">
+				</div>
+			</div>
+
+			<div class="controlPanel">
+				<ul>
+					<li>
+						{call .ControlPanelButton}
+							{param className}share{/param}
+							{param text}SHARE{/param}
+						{/call}
+					</li>
+					<li>
+						{call .ControlPanelButton}
+							{param className}social{/param}
+							{param text}SOCIAL FEED{/param}
+						{/call}
+					</li>
+					<li>
+						{call .ControlPanelButton}
+							{param className}store{/param}
+							{param text}STORE{/param}
+						{/call}
+					</li>
+					<li>
+						{call .ControlPanelButton}
+							{param className}sound{/param}
+							{param text}SOUND{/param}
+							{param additionalContent}
+								<div class="maxSoundIcon"></div>
+								<div class="slider">
+									<div class="handle"></div>
+									<div class="bar"><div class="fill"></div></div>
+								</div>
+								<div class="minSoundIcon"></div>
+							{/param}
+						{/call}
+					</li>
+					<li>
+						{call .ControlPanelButton}
+							{param className}about{/param}
+							{param text}ABOUT AMEX UNSTAGED{/param}
+						{/call}
+					</li>
+					<li>
+						{call .ControlPanelButton}
+							{param className}backstaged{/param}
+							{param text}BACKSTAGED{/param}
+						{/call}
+					</li>
+				</ul>
+			</div>
+
+			<div class="videoControls"> 
+				<div class="slider">
+					<div class="handle"></div>
+					<div class="bar"><div class="fill"></div></div>
+				</div>
+				<div class="time">11:24:42</div>
+			</div>
+
+		</div>
+
+	{/param}
+{/call}
+{/template}
+
+
+/**
+ * home page control panel button
+ * @param className the button class name
+ * @param text the button text
+ * @param? additionalContent the additional content html above icon
+ */
+{template .ControlPanelButton}
+<div class="{ $className } button">
+	<div class="back"></div>
+	<div class="content">
+		{ $additionalContent }
+		<div class="icon"></div>
+		<p>{ $text }</p>
+	</div>
+</div>
+{/template}
+
+
+/**
+ * did you know
+ * @param image the album cover image url
+ * @param body the body text
+ * @param buyThisTrackUrl the url to buy this track link
+ * @param moreLinerNotesUrl the url for more liner notes link
+ */
+{template .DidYouKnow}
+<div class="didYouKnow">
+	<h6>DID YOU KNOW?</h6>
+	<img src="{ $image }">
+	<p>{ $body }</p>
+	<a href="{ $buyThisTrackUrl }">BUY THIS TRACK</a>
+	<a href="{ $moreLinerNotesUrl }">MORE LINER NOTES</a>
+</div>
+{/template}

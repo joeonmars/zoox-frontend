@@ -1,0 +1,63 @@
+{namespace zoox.templates.screens.sharescreen autoescape="false"}
+
+/**
+ * Share screen
+ */
+{template .ShareScreen}
+{call zoox.templates.screens.Screen}
+	{param screenId}share-screen{/param}
+	{param screenContent}
+
+		{call zoox.templates.screens.Menu}
+			{param buttons}
+			<li class="share buttonContainer">
+				<div class="share button">SHARE</div>
+			</li>
+			<li class="feed buttonContainer">
+				<div class="feed button">FEED</div>
+			</li>
+			{/param}
+		{/call}
+
+		// the share page
+		<div class="share page">
+			<h3>SHARE</h3>
+
+			<ul class="tabs">
+				<li><div class="twitter"></div></li>
+				<li><div class="googleplus"></div></li>
+				<li><div class="facebook"></div></li>
+				<li><div class="email"></div></li>
+			</ul>
+
+			<h6>SHARE THIS ON TWITTER</h6>
+
+			<div class="imageView">
+				<img src="">
+			</div>
+
+			<div class="shareText">
+				<p>Check out @BandName playing "Song Name" live on #AmExUNSTAGED</p>
+			</div>
+
+			<div class="share button">SHARE</div>
+		</div>
+
+		// the feed page
+		<div class="feed page">
+			<h3>SOCIAL FEED</h3>
+
+			<div class="promptBox">
+				<p>YOUR TWEET HAS BEEN SHARED!</p>
+			</div>
+
+			<div class="refresh button">
+				<p>REFRESHING AUTOMATICALLY</p>
+				<p>REFRESHING MANUALLY</p>
+			</div>
+
+		</div>
+
+	{/param}
+{/call}
+{/template}

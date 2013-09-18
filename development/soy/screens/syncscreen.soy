@@ -1,0 +1,48 @@
+{namespace zoox.templates.screens.syncscreen autoescape="false"}
+
+/**
+ * Sync screen
+ */
+{template .SyncScreen}
+{call zoox.templates.screens.Screen}
+	{param screenId}sync-screen{/param}
+	{param screenContent}
+
+	<div class="branding">
+		<div class="aenLogo"></div>
+		<p>PRESENTS</p>
+		<div class="ninLogo"></div>
+		<p>DIRECTED BY JAMES FRANCO</p>
+	</div>
+
+	<div class="spinner"></div>
+
+	<div class="control">
+		<ul class="codeContainer">
+			<li class="code"></li>
+			<li class="code"></li>
+			<li class="code"></li>
+			<li class="code"></li>
+			<li class="code"></li>
+		</ul>
+		<div class="sync button">SYNC</div>
+		<p>If you don’t have a code yet, go to <b>http://AmexUnstaged.com/Connect</b> on your computer to get one.</p>
+		<div class="help button">HELP</div>
+	</div>
+
+	<div class="connecting overlay">
+		<p>CONNECTING</p>
+		<div class="spinner"></div>
+	</div>
+
+	<div class="refresh overlay">
+		<div class="oops"></div>
+		<h6>SOMETHING DIDN'T WORK..</h6>
+		<p>Please refresh your desktop web browser and enter the new code.</p>
+		<div class="ok button"></div>
+		<div class="help button"></div>
+	</div>
+
+	{/param}
+{/call}
+{/template}

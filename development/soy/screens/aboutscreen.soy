@@ -1,0 +1,45 @@
+{namespace zoox.templates.screens.aboutscreen autoescape="false"}
+
+/**
+ * About screen
+ */
+{template .AboutScreen}
+{call zoox.templates.screens.Screen}
+	{param screenId}about-screen{/param}
+	{param screenContent}
+
+		{call zoox.templates.screens.Menu}
+			{param buttons}
+			<li class="band buttonContainer">
+				<div class="band button">BAND NAME</div>
+			</li>
+			<li class="director buttonContainer">
+				<div class="director button">DIRECTOR NAME</div>
+			</li>
+			{/param}
+		{/call}
+
+		<h3>ABOUT AMEX UNSTAGED</h3>
+
+		<div class="imageView"></div>
+
+		<div class="outer">
+			<h6>Subscribe to American Express Unstaged<h6>
+			<p>The channel that connects world-class artists with renowned directors to create unscripted, unexpected musical journeys. From studio to stage, from quiet reflection to roof-raising passion, American Express UNSTAGED creates unforgettable stories and performances.</p>
+			<p>Click here to subscribe: <b>http://goo.gl/y29uX</b></p>
+		</div>
+
+		<div class="bottom">
+			<div class="button">
+				<img src="">
+				<p>AMERICAN EXPRESS</p>
+			</div>
+			<div class="button">
+				<img src="">
+				<p>AMEX ON TWITTER</p>
+			</div>
+		</div>
+
+	{/param}
+{/call}
+{/template}
