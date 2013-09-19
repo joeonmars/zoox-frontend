@@ -18,7 +18,7 @@ zoox.controllers.NavigationController = function(){
   // the history object
   var input = goog.dom.createDom('input');
   var iframe = goog.dom.createDom('iframe');
-  this._navHistory = new goog.History(false, null, input, iframe);
+  this._navHistory = new goog.History(true, 'blank.html', input, iframe);
 
   // dispatchers that listen for navigate event
   this._dispatchers = [];
@@ -49,26 +49,25 @@ zoox.controllers.NavigationController.prototype.removeDispatcher = function(disp
 
 zoox.controllers.NavigationController.prototype.setToken = function(token){
 	token = goog.string.remove(token, '#');
+	token = '/' + token;
 	this._navHistory.setToken(token);
 };
 
 
 zoox.controllers.NavigationController.prototype.getToken = function(){
 	var token = this._navHistory.getToken();
-	if(goog.string.startsWith(token, '/')) {
-		token = token.split('/');
-		token.shift();
+	token = token.split('/');
 
-		if(goog.array.peek(token) === '') token.pop();
-	}else {
-		token = [];
-	}
+	if(token[0] === '') token.shift();
+	if(goog.array.peek(token) === '') token.pop();
+
 	return token;
 };
 
 
 zoox.controllers.NavigationController.prototype.replaceToken = function(token, title){
-	this._navHistory.replaceToken(token ,title);
+	token = '/' + token;
+	this._navHistory.replaceToken(token, title);
 };
 
 

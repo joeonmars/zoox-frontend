@@ -4,8 +4,10 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 // --- Global vars ---
-$min_width: 768px;
-$min_height: 640px;
+$min_width: 320px;
+$min_height: 480px;
+$break-small: 360px;
+$break-large: 640px;
 $font_system: Arial, Helvetica, sans-serif;
 
 // --- imports ---
@@ -15,12 +17,41 @@ $font_system: Arial, Helvetica, sans-serif;
 @import "compass/css3/text-shadow";
 @import "compass/css3/transition";
 
+html{
+  font-size: 62.5%;
+}
 
-html, body{
+body{
   position: absolute;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  min-width: $min-width;
+  min-height: $min-height;
+
+  @media screen and (max-width: $break-small) {
+    font-size: 1em;
+    //background-color: #444;
+  }
+  @media screen and (min-width: $break-small) {
+    font-size: 1.5em;
+    //background-color: #555;
+  }
+  @media screen and (min-width: $break-large) {
+    font-size: 2em;
+    //background-color: #666;
+  }
+
+  @media screen and (orientation : landscape) {
+    #rotate{
+      display: block;
+    }
+  }
+
+  @media screen and (orientation : portrait) {
+    #rotate{
+      display: none;
+    }
+  }
 
   &.touch{
     *{
@@ -33,23 +64,8 @@ html, body{
   }
 }
 
-body{
-  min-width: $min-width;
-  min-height: $min-height;
-}
-
 a{
   text-decoration: none;
-}
-
-.clearfix{
-  clear:both;
-}
-
-.topLeft{
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .button{

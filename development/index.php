@@ -8,7 +8,7 @@
 <html>
 
 	<head>
-		<title>A Plovr Project</title>
+		<title>Zoox Prototype</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	  <meta name="keywords" content="">
@@ -21,9 +21,8 @@
 
 
 		<!-- third-party -->
-		<script src="/js/third-party/signals.min.js"></script>
-		<script src="/js/third-party/crossroads.min.js"></script>
 		<script src="/js/third-party/modernizr-latest.js"></script>
+		<script src="/js/third-party/greensock/plugins/ScrollToPlugin.min.js"></script>
 		<script src="/js/third-party/greensock/TweenMax.min.js"></script>
 
 		<!-- project js -->

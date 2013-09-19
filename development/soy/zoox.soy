@@ -1,0 +1,26 @@
+{namespace zoox.templates autoescape="false"}
+
+/**
+ * main structure
+ */
+{template .Main}
+<div id="main">
+	<div id="screen-view">
+
+		<div class="screenGroup">
+			<div class="screenHolder" data-holder-id="sync-screen"></div>
+			<div class="screenHolder" data-holder-id="help-screen"></div>
+		</div>
+
+		<div class="screenGroup">
+			<div class="screenHolder" data-holder-id="home-screen"></div>
+
+			<div class="screenGroup">
+				<div class="screenHolder" data-holder-id="about-screen"></div>
+				<div class="screenHolder" data-holder-id="share-screen"></div>
+			</div>
+		</div>
+
+	</div>
+</div>
+{/template}

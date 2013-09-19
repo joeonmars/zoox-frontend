@@ -1,0 +1,48 @@
+{namespace zoox.templates.screens.helpscreen autoescape="false"}
+
+/**
+ * Help screen
+ */
+{template .HelpScreen}
+{call zoox.templates.screens.Screen}
+	{param screenId}help-screen{/param}
+	{param screenContent}
+
+		{call zoox.templates.screens.Menu}{/call}
+
+		<div class="left arrow">
+		<div class="titleContainer">
+			<h3>NINE INCH NAILS</h3>
+			<ul>
+				<li>DIRECTOR'S CUT</li>
+				<li>LIVE FROM HOLLYWOOD BOWL</li>
+			</ul>
+		</div>
+		<div class="right arrow">
+
+		<ul class="imageContainer">
+			<li><img src=""></li>
+			<li><img src=""></li>
+		</ul>
+
+		<ul class="tabs">
+			<li class="live button"><div>LIVE</div></li>
+			<li class="director button"><div>DIRECTOR</div></li>
+			<li class="singer button"><div>SINGER</div></li>
+			<li class="crowd button"><div>CROWD</div></li>
+		</ul>
+
+		<div class="tabContent">
+			<p class="live">You can swtich between previews of the camera views available by swiping (or taping) left and right, like this.</p>
+			<p class="director">Once you've found the view you want to watch, simply swipe upwards (or double tap) on the preview screen to send it to your main screen.</p>
+		</div>
+
+		<div class="next button">
+			<p>SHOW ME NEXT HELP TIP</p>
+		</div>
+
+		<div class="swipe"></div>
+
+	{/param}
+{/call}
+{/template}

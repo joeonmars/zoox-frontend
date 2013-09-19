@@ -3,3 +3,37 @@ $icon-sprite-dimensions: true;
 $icon-layout:smart;
 
 @import "global";
+
+#main{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+	#screen-view{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+
+		.screenHolder, .screenGroup{
+			display: inline-block;
+			vertical-align: top;
+			width: 100%;
+			height: 100%;
+			white-space: nowrap;
+		}
+
+		.screenGroup{
+			overflow: hidden;
+		}
+
+		.screen{
+			display: inline-block;
+			vertical-align: top;
+			width: 100%;
+			height: 100%;
+			white-space: normal;
+		}
+	}
+}

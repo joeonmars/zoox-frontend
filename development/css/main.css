@@ -58,13 +58,43 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-html, body {
+html {
+  font-size: 62.5%;
+}
+
+body {
   position: absolute;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  min-width: 320px;
+  min-height: 480px;
 }
-html.touch *, body.touch * {
+@media screen and (max-width: 360px) {
+  body {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 360px) {
+  body {
+    font-size: 1.5em;
+  }
+}
+@media screen and (min-width: 640px) {
+  body {
+    font-size: 2em;
+  }
+}
+@media screen and (orientation: landscape) {
+  body #rotate {
+    display: block;
+  }
+}
+@media screen and (orientation: portrait) {
+  body #rotate {
+    display: none;
+  }
+}
+body.touch * {
   outline: none;
   outline-style: none;
   -webkit-touch-callout: none;
@@ -76,23 +106,8 @@ html.touch *, body.touch * {
   user-select: none;
 }
 
-body {
-  min-width: 768px;
-  min-height: 640px;
-}
-
 a {
   text-decoration: none;
-}
-
-.clearfix {
-  clear: both;
-}
-
-.topLeft {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .button {
@@ -102,4 +117,34 @@ a {
   cursor: pointer;
   text-align: center;
   display: block;
+}
+
+#main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#main #screen-view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#main #screen-view .screenHolder, #main #screen-view .screenGroup {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+}
+#main #screen-view .screenGroup {
+  overflow: hidden;
+}
+#main #screen-view .screen {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  white-space: normal;
 }
