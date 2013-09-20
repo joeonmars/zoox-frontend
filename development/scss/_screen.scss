@@ -1,0 +1,35 @@
+.screen{
+	color: #fff;
+	background-color: #2b323c;
+
+	>.menu{
+		background-color: #000;
+		width: 100%;
+		height: 4.4em;
+
+		>li{
+			display: inline-block;
+			vertical-align: top;
+			height: 100%;
+			color: #000;
+
+			&.back{
+				&.buttonContainer{
+					width: 24%;
+
+					>.button{
+						margin: 1em auto;
+						@include use-sprite("back");
+
+						>p{
+							padding-left: 1em;
+							line-height: 2.3em;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+}

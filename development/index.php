@@ -22,12 +22,14 @@
 
 		<!-- third-party -->
 		<script src="/js/third-party/modernizr-latest.js"></script>
+		<script src="/js/third-party/fastclick.js"></script>
 		<script src="/js/third-party/greensock/plugins/ScrollToPlugin.min.js"></script>
 		<script src="/js/third-party/greensock/TweenMax.min.js"></script>
 
 		<!-- project js -->
 		<!--<script src="js/compiled.js"></script>-->
-		<script src="http://localhost:9810/compile?id=zoox&mode=<?php echo $COMPILE_MODE ?>"></script>
+		<!--<script src="http://localhost:9810/compile?id=zoox&mode=<?php echo $COMPILE_MODE ?>"></script>-->
+		<script src="/js/zoox-compiled.js"></script>
 
 		<!-- execute the main js-->
 		<script>

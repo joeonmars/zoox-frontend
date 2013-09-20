@@ -83,21 +83,46 @@ zoox.controllers.ScreenController.prototype.getScreenId = function(screenClass){
 zoox.controllers.ScreenController.prototype.toScreen = function(targetScreen){
 	if(!this.currentScreen) this.currentScreen = targetScreen;
 
-	var screenGroups = targetScreen.getScreenGroup();
-
 	// locate screen before tweening
-	goog.array.forEach(screenGroups, function(screenGroup) {
-		//screenGroup.parentNode.scrollLeft = zoox.utils.getRelativeOffsetLeft( screenGroup );
-	}, this);
+	var screenGroups = targetScreen.getScreenGroup();
+	var outerMostScreenGroup;
+	var scrollX;
+
+	var i, l = screenGroups.length;
+	for(i = 0; i < l; ++i) {
+		var screenGroup = screenGroups[i];
+
+		if(goog.dom.contains(screenGroup, this.currentScreen.domElement)) {
+			outerMostScreenGroup = screenGroup;
+
+			if(i === 0) scrollX = zoox.utils.getRelativeOffsetLeft( targetScreen.domElement.parentNode );
+			else scrollX = zoox.utils.getRelativeOffsetLeft( screenGroups[i - 1] );
+
+			break;
+		}
+
+		var groupChildren = goog.dom.getChildren(screenGroup);
+		var childContainedTargetScreen = goog.array.find(groupChildren, function(child) {
+			return goog.dom.contains(child, targetScreen.domElement);
+		});
+		
+		screenGroup.scrollLeft = zoox.utils.getRelativeOffsetLeft( childContainedTargetScreen );
+	}
 
 	// tween to screen
-	var outerMostScreenGroup = goog.array.peek( screenGroups );
-	var scrollX = zoox.utils.getRelativeOffsetLeft( outerMostScreenGroup );
-
-	TweenMax.to(outerMostScreenGroup.parentNode, .4, {
+	TweenMax.to(outerMostScreenGroup, .4, {
 		scrollTo: {x: scrollX},
-		ease: Quad.easeInOut
+		ease: Quad.easeInOut,
+		onComplete: this.onScreenTransitionComplete,
+		onCompleteScope: this,
+		onCompleteParams: [targetScreen]
 	});
+};
+
+
+zoox.controllers.ScreenController.prototype.onScreenTransitionComplete = function (targetScreen) {
+	this.currentScreen = targetScreen;
+	console.log('current screen: ', this.currentScreen);
 };
 
 

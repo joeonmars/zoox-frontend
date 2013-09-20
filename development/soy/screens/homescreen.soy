@@ -43,6 +43,7 @@
 						{call .ControlPanelButton}
 							{param className}share{/param}
 							{param text}SHARE{/param}
+							{param token}share-screen{/param}
 						{/call}
 					</li>
 					<li>
@@ -75,6 +76,7 @@
 						{call .ControlPanelButton}
 							{param className}about{/param}
 							{param text}ABOUT AMEX UNSTAGED{/param}
+							{param token}about-screen{/param}
 						{/call}
 					</li>
 					<li>
@@ -105,10 +107,11 @@
  * home page control panel button
  * @param className the button class name
  * @param text the button text
+ * @param? token the data token
  * @param? additionalContent the additional content html above icon
  */
 {template .ControlPanelButton}
-<div class="{ $className } button">
+<div class="{ $className } button" {if $token}data-token="{ $token }"{/if}>
 	<div class="back"></div>
 	<div class="content">
 		{ $additionalContent }

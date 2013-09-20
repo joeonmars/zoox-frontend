@@ -14,12 +14,15 @@
 
 /**
  * screen top menu
+ * @param backToken back button token
  * @param? buttons top menu buttons in addition to back buton
  */
 {template .Menu}
 <ul class="menu">
 	<li class="back buttonContainer">
-		<div class="back button">BACK</div>
+		<div class="back button" data-token="{ $backToken }">
+			<p>BACK</p>
+		</div>
 	</li>
 	{ $buttons }
 </ul>

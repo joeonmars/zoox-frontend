@@ -5,6 +5,7 @@ goog.require( 'goog.dom' );
 goog.require( 'goog.dom.query' );
 goog.require( 'goog.style' );
 goog.require( 'goog.net.ImageLoader' );
+goog.require( 'goog.events.EventHandler' );
 goog.require( 'soy' );
 
 
@@ -17,6 +18,7 @@ zoox.views.screens.Screen = function () {
 
 	this._data = null;
 	this._isCreated = false;
+	this._eventHandler = null;
 
 	this.domElement = null;
 	this.id = null;
@@ -63,6 +65,22 @@ zoox.views.screens.Screen.prototype.create = function (data, template) {
 	// add dom to its holder
 	var screenHolderDom = goog.dom.query('div[data-holder-id=' + this.id + ']')[0];
 	goog.dom.appendChild(screenHolderDom, this.domElement);
+
+	// add event listeners
+	this._eventHandler = new goog.events.EventHandler(this);
+	var buttons = goog.dom.query('.button', this.domElement);
+	goog.array.forEach(buttons, function(button) {
+		FastClick.attach(button);
+		this._eventHandler.listen(button, 'click', this.onClickButton, false, this);
+	}, this);
+};
+
+
+zoox.views.screens.Screen.prototype.onClickButton = function (e) {
+	var token = e.currentTarget.getAttribute('data-token');
+	if(token) {
+		zoox.main.controllers.navigationController.setToken(token);
+	}
 };
 
 

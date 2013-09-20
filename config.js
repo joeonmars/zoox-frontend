@@ -5,7 +5,9 @@
   "paths": ["development"],
   "inputs": "development/js/main.js",
   "mode": "ADVANCED",
+  "level": "QUIET",
   "externs": [
-  	/*"js/third-party/greensock/TweenMax.min.js"*/
+  	"development/js/third-party/fastclick.js",
+  	"development/js/third-party/greensock/TweenMax.min.js"
 	]
 }

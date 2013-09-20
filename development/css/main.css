@@ -1,3 +1,25 @@
+/*
+ * Retina Backgrounds for Compass
+ * by:              Gaya Kessler
+ * last update:     01/14/13
+ *
+ * Usage:
+ * 1. create background image for pixel ratio 1 screens and put it somewhere in your images folder.
+ * 2. create background image for pixel ratio 2 screens and put it somewhere in your images folder.
+ * 3. include the background-image property in your Sass/Scss using: '@include background-retina(<ratio-1-imagefile>, <ratio-2-imagefile>)'
+ */
+/*
+ * Retina Sprites for Compass
+ * by:              Gaya Kessler
+ * last update:     01/14/13
+ *
+ * Usage:
+ * 1. create two folders in your image directory (in this case 'icons' and 'icons-2x').
+ * 2. adjust the foldernames defined below if you use different names.
+ * 3. create sprite images for pixel ratio 1 screens and put them in the first folder.
+ * 4. create sprite images for pixel ratio 2 screens and put them in the second folder, use the same filenames.
+ * 5. use the sprite-image in your Sass/Scss using: '@include use-sprite(<sprite-name>)'
+ */
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -67,7 +89,7 @@ body {
   width: 100%;
   height: 100%;
   min-width: 320px;
-  min-height: 480px;
+  min-height: 400px;
 }
 @media screen and (max-width: 360px) {
   body {
@@ -119,6 +141,48 @@ a {
   display: block;
 }
 
+.screen {
+  color: #fff;
+  background-color: #2b323c;
+}
+.screen > .menu {
+  background-color: #000;
+  width: 100%;
+  height: 4.4em;
+}
+.screen > .menu > li {
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  color: #000;
+}
+.screen > .menu > li.back.buttonContainer {
+  width: 24%;
+}
+.screen > .menu > li.back.buttonContainer > .button {
+  margin: 1em auto;
+  background-image: url('../img/icons-sd00d824dc6.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  height: 23px;
+  width: 51px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
+  .screen > .menu > li.back.buttonContainer > .button {
+    background-image: url('../img/icons-2x-sf11b535b91.png');
+    background-size: 51px 22.5px;
+    background-position: 0 0;
+    height: 22.5px;
+    width: 51px;
+  }
+}
+.screen > .menu > li.back.buttonContainer > .button > p {
+  padding-left: 1em;
+  line-height: 2.3em;
+}
+
 #main {
   width: 100%;
   height: 100%;
@@ -142,8 +206,6 @@ a {
   overflow: hidden;
 }
 #main #screen-view .screen {
-  display: inline-block;
-  vertical-align: top;
   width: 100%;
   height: 100%;
   white-space: normal;

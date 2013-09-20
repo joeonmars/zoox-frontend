@@ -18,14 +18,4 @@ zoox.views.screens.SyncScreen.prototype.create = function () {
 	var template = zoox.templates.screens.syncscreen.SyncScreen;
 
 	goog.base(this, 'create', data, template);
-
-	//
-	var syncButton = goog.dom.query('.sync.button')[0];
-	goog.events.listen(syncButton, 'click', this.onClick, false, this);
-};
-
-
-zoox.views.screens.SyncScreen.prototype.onClick = function (e) {
-	var token = e.currentTarget.getAttribute('data-token');
-	zoox.main.controllers.navigationController.setToken(token);
 };

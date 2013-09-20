@@ -17,6 +17,10 @@ zoox.controllers.WindowController = function() {
   // listen for window events
   goog.events.listen(this._viewportSizeMonitor, goog.events.EventType.RESIZE, this.onResize, false, this);
   goog.events.listen(this._window, 'orientationchange', this.onOrientationChange, false, this);
+
+  goog.events.listen(document, 'touchmove', function(e) {
+  	e.preventDefault();
+  });
 };
 goog.inherits(zoox.controllers.WindowController, goog.events.EventTarget);
 goog.addSingletonGetter(zoox.controllers.WindowController);
