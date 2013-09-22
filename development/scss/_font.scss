@@ -1,0 +1,9 @@
+@import "compass/css3/font-face";
+
+@include font-face("Unstaged", font-files("AMEXUnstaged.woff", "AMEXUnstaged.svg#Unstaged"), "AMEXUnstaged.eot");
+
+@mixin fontUnstaged($spacing:0px) {
+	font-family: "Unstaged", sans-serif;
+    letter-spacing: $spacing;
+    -webkit-font-smoothing: antialiased;
+}

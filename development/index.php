@@ -28,8 +28,8 @@
 
 		<!-- project js -->
 		<!--<script src="js/compiled.js"></script>-->
-		<!--<script src="http://localhost:9810/compile?id=zoox&mode=<?php echo $COMPILE_MODE ?>"></script>-->
-		<script src="/js/zoox-compiled.js"></script>
+		<script src="http://localhost:9810/compile?id=zoox&mode=<?php echo $COMPILE_MODE ?>"></script>
+		<!--<script src="/js/zoox-compiled.js"></script>-->
 
 		<!-- execute the main js-->
 		<script>

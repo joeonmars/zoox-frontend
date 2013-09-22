@@ -20,6 +20,12 @@
  * 4. create sprite images for pixel ratio 2 screens and put them in the second folder, use the same filenames.
  * 5. use the sprite-image in your Sass/Scss using: '@include use-sprite(<sprite-name>)'
  */
+@font-face {
+  font-family: "Unstaged";
+  src: url('../font/AMEXUnstaged.eot');
+  src: url('../font/AMEXUnstaged.eot?#iefix') format('eot'), url('../font/AMEXUnstaged.woff') format('woff'), url('../font/AMEXUnstaged.svg#Unstaged') format('svg');
+}
+
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -82,6 +88,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 html {
   font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -141,7 +148,144 @@ a {
   display: block;
 }
 
+#sync-screen {
+  background-image: url('../img/1x/leather-background.jpg?1379817598');
+  background-size: cover;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
+  #sync-screen {
+    background-image: url('../img/2x/leather-background.jpg?1379817537');
+    background-size: 320px 568px;
+  }
+}
+#sync-screen > .branding {
+  position: absolute;
+  top: 50%;
+  margin-top: -7.75em;
+  width: 100%;
+}
+#sync-screen > .branding > .amexLogo {
+  background-image: url('../img/1x/logo-amex.png?1379819047');
+  background-repeat: no-repeat;
+  background-position: right center;
+  width: 100%;
+  height: 6.65em;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
+  #sync-screen > .branding > .amexLogo {
+    background-image: url('../img/2x/logo-amex.png?1379819033');
+    background-size: 303px 66.5px;
+  }
+}
+#sync-screen > .branding > h2 {
+  text-align: center;
+  font-size: 5.85em;
+  font-family: "Unstaged", sans-serif;
+  letter-spacing: 0px;
+  -webkit-font-smoothing: antialiased;
+}
+#sync-screen > .branding > .present {
+  text-align: center;
+  font-size: 1.5em;
+}
+#sync-screen > .branding > .directed {
+  text-align: center;
+  font-size: 1.35em;
+}
+#sync-screen > .panel {
+  position: relative;
+  top: 42%;
+  margin: 0 auto;
+  width: 26.7em;
+}
+#sync-screen > .panel > .controls > .codeContainer {
+  width: 100%;
+  height: 5em;
+}
+#sync-screen > .panel > .controls > .codeContainer > .code {
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+  height: 100%;
+  padding: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#sync-screen > .panel > .controls > .codeContainer > .code > div {
+  width: 100%;
+  height: 100%;
+  font-size: 2.45em;
+  text-align: center;
+  line-height: 2em;
+  text-transform: uppercase;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3c424c), color-stop(100%, #363b45));
+  background: -webkit-linear-gradient(top, #3c424c, #363b45);
+  background: -moz-linear-gradient(top, #3c424c, #363b45);
+  background: -o-linear-gradient(top, #3c424c, #363b45);
+  background: linear-gradient(top, #3c424c, #363b45);
+  -webkit-box-shadow: 0px 1px 0px rgba(225, 225, 225, 0.15) inset, 0 4px 3px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 1px 0px rgba(225, 225, 225, 0.15) inset, 0 4px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 1px 0px rgba(225, 225, 225, 0.15) inset, 0 4px 3px rgba(0, 0, 0, 0.6);
+}
+#sync-screen > .panel > .controls > .sync {
+  position: relative;
+  top: 0.2em;
+  z-index: 1;
+  width: 100%;
+  height: 4.5em;
+  padding: 0 2px 0 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#sync-screen > .panel > .controls > .sync > div {
+  width: 100%;
+  height: 100%;
+  font-size: 1.9em;
+  line-height: 2.4em;
+  text-align: center;
+  color: #000;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #777b84), color-stop(100%, #6b6f77));
+  background: -webkit-linear-gradient(top, #777b84, #6b6f77);
+  background: -moz-linear-gradient(top, #777b84, #6b6f77);
+  background: -o-linear-gradient(top, #777b84, #6b6f77);
+  background: linear-gradient(top, #777b84, #6b6f77);
+  -webkit-box-shadow: 0px 1px 0px rgba(225, 225, 225, 0.15) inset, 0 4px 3px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 1px 0px rgba(225, 225, 225, 0.15) inset, 0 4px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 1px 0px rgba(225, 225, 225, 0.15) inset, 0 4px 3px rgba(0, 0, 0, 0.6);
+}
+#sync-screen > .panel > .tip {
+  padding: 1.7em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#sync-screen > .panel > .tip > p {
+  font-size: 1.2em;
+  line-height: 1.4em;
+  text-align: center;
+}
+#sync-screen > .panel > .tip > p > b {
+  display: block;
+  font-weight: bold;
+}
+#sync-screen .overlay {
+  position: absolute;
+  top: 3.5%;
+  left: 5%;
+  width: 90%;
+  height: 93%;
+  background: rgba(0, 0, 0, 0.84);
+}
+#sync-screen .overlay.connecting > p {
+  margin-top: 9.75em;
+  font-size: 1.52em;
+  text-align: center;
+}
+
 .screen {
+  position: relative;
   color: #fff;
   background-color: #2b323c;
 }

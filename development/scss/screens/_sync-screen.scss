@@ -1,0 +1,121 @@
+#sync-screen{
+	@include background-retina("1x/leather-background.jpg", "2x/leather-background.jpg");
+	background-size: cover;
+
+	>.branding{
+		position: absolute;
+		top: 50%;
+		margin-top: -7.75em;
+		width: 100%;
+
+		>.amexLogo{
+			@include background-retina("1x/logo-amex.png", "2x/logo-amex.png");
+			background-repeat: no-repeat;
+			background-position: right center;
+			width: 100%;
+			height: 6.65em;
+		}
+
+		>h2{
+			text-align: center;
+			font-size: 5.85em;
+			@include fontUnstaged;
+		}
+
+		>.present{
+			text-align: center;
+			font-size: 1.5em;
+		}
+
+		>.directed{
+			text-align: center;
+			font-size: 1.35em;
+		}
+	}
+
+	>.panel{
+		position: relative;
+		top: 42%;
+		margin: 0 auto;
+		width: 26.7em;
+
+		>.controls{
+			>.codeContainer{
+				width: 100%;
+				height: 5em;
+
+				>.code{
+					display: inline-block;
+					vertical-align: top;
+					width: 20%;
+					height: 100%;
+					padding: 1px;
+					@include box-sizing(border-box);
+
+					>div{
+						width: 100%;
+						height: 100%;
+						font-size: 2.45em;
+						text-align: center;
+						line-height: 2em;
+						text-transform: uppercase;
+						@include darkGrayButton();
+					}
+				}
+			}
+
+			>.sync{
+				position: relative;
+				top: 0.2em;
+				z-index: 1;
+				width: 100%;
+				height: 4.5em;
+				padding: 0 2px 0 1px;
+				@include box-sizing(border-box);
+
+				>div{
+					width: 100%;
+					height: 100%;
+					font-size: 1.9em;
+					line-height: 2.4em;
+					text-align: center;
+					color: #000;
+					@include grayButton();
+				}
+			}
+		}
+
+		>.tip{
+			padding: 1.7em;
+			@include box-sizing(border-box);
+
+			>p{
+				font-size: 1.2em;
+				line-height: 1.4em;
+				text-align: center;
+
+				>b{
+					display: block;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	.overlay{
+		position: absolute;
+		top: 3.5%;
+		left: 5%;
+		width: 90%;
+		height: 93%;
+		background: rgba(0, 0, 0, .84);
+
+		&.connecting{
+			>p{
+				margin-top: 9.75em;
+				font-size: 1.52em;
+				text-align: center;
+			}
+		}
+	}
+}

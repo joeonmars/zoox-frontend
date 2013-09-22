@@ -9,6 +9,7 @@ goog.require('zoox.views.screens.SyncScreen');
 goog.require('zoox.views.screens.ShareScreen');
 goog.require('zoox.views.screens.HelpScreen');
 goog.require('zoox.views.screens.HomeScreen');
+goog.require('zoox.events');
 goog.require('zoox.utils');
 
 /**
@@ -113,6 +114,9 @@ zoox.controllers.ScreenController.prototype.toScreen = function(targetScreen){
 	TweenMax.to(outerMostScreenGroup, .4, {
 		scrollTo: {x: scrollX},
 		ease: Quad.easeInOut,
+		onStart: this.onScreenTransitionStart,
+		onStartScope: this,
+		onStartParams: [targetScreen],
 		onComplete: this.onScreenTransitionComplete,
 		onCompleteScope: this,
 		onCompleteParams: [targetScreen]
@@ -120,9 +124,31 @@ zoox.controllers.ScreenController.prototype.toScreen = function(targetScreen){
 };
 
 
+zoox.controllers.ScreenController.prototype.onScreenTransitionStart = function (targetScreen) {
+	var ev = {
+		type: zoox.events.EventType.SCREEN_TRANSITION_START,
+		currentScreen: this.currentScreen,
+		targetScreen: targetScreen
+	};
+
+	goog.object.forEach(this.screens, function(screen) {
+		screen.dispatchEvent( ev );
+	});
+};
+
+
 zoox.controllers.ScreenController.prototype.onScreenTransitionComplete = function (targetScreen) {
 	this.currentScreen = targetScreen;
 	console.log('current screen: ', this.currentScreen);
+
+	var ev = {
+		type: zoox.events.EventType.SCREEN_TRANSITION_COMPLETE,
+		currentScreen: this.currentScreen
+	};
+
+	goog.object.forEach(this.screens, function(screen) {
+		screen.dispatchEvent( ev );
+	});
 };
 
 

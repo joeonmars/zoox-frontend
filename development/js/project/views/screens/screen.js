@@ -73,6 +73,19 @@ zoox.views.screens.Screen.prototype.create = function (data, template) {
 		FastClick.attach(button);
 		this._eventHandler.listen(button, 'click', this.onClickButton, false, this);
 	}, this);
+
+	this._eventHandler.listen(this, zoox.events.EventType.SCREEN_TRANSITION_START, this.onScreenTransitionStart, false, this);
+	this._eventHandler.listen(this, zoox.events.EventType.SCREEN_TRANSITION_COMPLETE, this.onScreenTransitionComplete, false, this);
+};
+
+
+zoox.views.screens.Screen.prototype.handleOnScreenTransitionStart = function () {
+	console.log('handle transition start', this.id);
+};
+
+
+zoox.views.screens.Screen.prototype.handleOnScreenTransitionComplete = function () {
+	console.log('handle transition complete', this.id);
 };
 
 
@@ -81,6 +94,16 @@ zoox.views.screens.Screen.prototype.onClickButton = function (e) {
 	if(token) {
 		zoox.main.controllers.navigationController.setToken(token);
 	}
+};
+
+
+zoox.views.screens.Screen.prototype.onScreenTransitionStart = function (e) {
+	if(this === e.currentScreen) this.handleOnScreenTransitionStart();
+};
+
+
+zoox.views.screens.Screen.prototype.onScreenTransitionComplete = function (e) {
+	if(this === e.currentScreen) this.handleOnScreenTransitionComplete();
 };
 
 

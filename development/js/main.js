@@ -6,6 +6,7 @@ goog.require('goog.style');
 goog.require('zoox.templates');
 goog.require('zoox.controllers.ScreenController');
 goog.require('zoox.controllers.NavigationController');
+goog.require('zoox.controllers.WindowController');
 
 
 zoox.Url = {
@@ -26,6 +27,7 @@ zoox.main = function() {
 };
 
 zoox.main.controllers = {
+	windowController: zoox.controllers.WindowController.getInstance(),
 	navigationController: zoox.controllers.NavigationController.getInstance(),
 	screenController: zoox.controllers.ScreenController.getInstance()
 };
