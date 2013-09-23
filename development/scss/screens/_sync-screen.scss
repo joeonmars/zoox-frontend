@@ -1,5 +1,5 @@
 #sync-screen{
-	@include background-retina("1x/leather-background.jpg", "2x/leather-background.jpg");
+	background-image: image-url("leather-background.jpg");
 	background-size: cover;
 
 	>.branding{
@@ -9,7 +9,7 @@
 		width: 100%;
 
 		>.amexLogo{
-			@include background-retina("1x/logo-amex.png", "2x/logo-amex.png");
+			background-image: image-url("logo-amex.png");
 			background-repeat: no-repeat;
 			background-position: right center;
 			width: 100%;
@@ -103,6 +103,7 @@
 	}
 
 	.overlay{
+		display: none;
 		position: absolute;
 		top: 3.5%;
 		left: 5%;
@@ -112,9 +113,18 @@
 
 		&.connecting{
 			>p{
-				margin-top: 9.75em;
+				margin-top: 9.5em;
 				font-size: 1.52em;
 				text-align: center;
+			}
+
+			>.spinner{
+				margin: 2.6em auto;
+				width: 12.5em;
+				height: 12.5em;
+				background-image: image-url("blue-spinner.png");
+				background-repeat: no-repeat;
+				background-size: 100%;
 			}
 		}
 	}

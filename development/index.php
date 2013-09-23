@@ -14,12 +14,13 @@
 	  <meta name="keywords" content="">
 	  <meta name="description" content="">
 	  <link rel="shortcut icon" href="/img/favicon.ico">
+
+	  <script>(function(w){var dpr=((w.devicePixelRatio===undefined)?1:w.devicePixelRatio);if(!!w.navigator.standalone){var r=new XMLHttpRequest();r.open('GET','php/retinaimages.php?devicePixelRatio='+dpr,false);r.send()}else{document.cookie='devicePixelRatio='+dpr+'; path=/'}})(window)</script>
+
 	  <link rel="stylesheet" href="/css/main.css" media="screen">
 	</head>
 
 	<body>
-
-
 		<!-- third-party -->
 		<script src="/js/third-party/modernizr-latest.js"></script>
 		<script src="/js/third-party/fastclick.js"></script>
