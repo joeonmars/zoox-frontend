@@ -149,7 +149,7 @@ a {
 }
 
 #sync-screen {
-  background-image: url('../img/leather-background.jpg?1379817598');
+  background-image: url('../img/leather-background.jpg?1379944502');
   background-size: cover;
 }
 #sync-screen > .branding {
@@ -159,7 +159,8 @@ a {
   width: 100%;
 }
 #sync-screen > .branding > .amexLogo {
-  background-image: url('../img/logo-amex.png?1379819047');
+  background-image: url('../img/logo-amex.png?1379944502');
+  background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: right center;
   width: 100%;
@@ -276,7 +277,7 @@ a {
   margin: 2.6em auto;
   width: 12.5em;
   height: 12.5em;
-  background-image: url('../img/blue-spinner.png?1379895962');
+  background-image: url('../img/blue-spinner.png?1379944502');
   background-repeat: no-repeat;
   background-size: 100%;
 }
